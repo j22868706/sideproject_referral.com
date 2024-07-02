@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simp |Find or become the best simp</title>
+    <!-- adding font from google font -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/application.css') }}"> 
+
+</head>
+<body>
+    <main style="width: 100%; display: flex;">
+    <!-- sidebar -->
+        <div class="sidebar">
+            <h1 id="returnIndex" class="logo">Simp.com</h1>
+            <div class="menus">
+                <a href="#" class="menu_fanpage"><ion-icon name="people-outline"></ion-icon>Member Page</a>
+                <a href="#" class="menu_post"><ion-icon name="newspaper-outline"></ion-icon>Post Job</a>
+                <a href="#" class="menu_message"><ion-icon name="mail-unread-outline"></ion-icon>My Message</a>
+                <a href="#" class="menu_schedule"><ion-icon name="alarm-outline"></ion-icon>My Schedule</a>
+                <a href="#" class="menu_mypost"><ion-icon name="bookmarks-outline"></ion-icon>My Posted Jobs</a>
+                <a href="#" class="menu_favorite"><ion-icon name="settings-outline"></ion-icon>My Saved Jobs</a>
+                <a href="#" class="menu_logout"><ion-icon name="log-out-outline"></ion-icon>Logout</a>
+            </div>
+        </div>
+        <div class="main">
+            <section class="container">
+                <header>Post Job</header>
+                <form class="form" id="postJob" >
+                    <div class="input_box">
+                        <label>Job Title</label>
+                        <input type="text" placeholder="Enter job title" id="jobTitle" name="jobTitle">
+                    </div>
+                    <div class="input_box">
+                        <label>Job Description</label>
+                        <input type="text" placeholder="Enter job description" id="jobDetail" name="jobDetail">
+                    </div>
+                    <div class="column">
+                        <div class="input_box">
+                            <label>Number of Positions</label>
+                            <input type="text" placeholder="Enter number of position" id="numberOfJobPositions" name="numberOfJobPositions">
+                        </div>
+                        <div class="input_box">
+                            <label>Job Date</label>
+                            <input type="date" placeholder="Enter job date" id="jobDate" name="jobDate">
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="input_box">
+                            <label>Start Time</label>
+                            <input type="time" placeholder="FROM" id="jobStartTime" name="jobStartTime">
+                        </div>
+                        <div class="input_box">
+                            <label>End Time</label>
+                            <input type="time" placeholder="FROM" id="jobEndTime" name="jobEndTime">
+                        </div>
+                    </div>
+                    <div class="input_box">
+                        <label>Job Location</label>
+                        <div class="column">
+                            <div class="input_box" style="display: flex;" id="twzipcode"></div>
+                        </div>
+                        <input type="text" placeholder="Enter job location" id="jobLocation" name="jobLocation">
+                    </div>
+                    <div class="column">
+                        <div class="input_box">
+                            <label>Salary Amount</label>
+                            <input type="text" placeholder="Enter salary amount" pattern="[0-9]+" title="薪資金額只能包含數字" id="jobSalary" name="jobSalary">
+                        </div>
+                        <div class="input_box">
+                            <label>Payment Method</label>
+                            <input type="text" placeholder="Enter payment method"  id="paymentMethod" name="paymentMethod">
+                        </div>
+                        <div class="input_box">
+                            <label>Pay Date</label>
+                            <input type="date" placeholder="Enter pay date" id="payDate" name="payDate">
+                        </div>
+                    </div>
+                    <div class="input_box">
+                        <label>Additional Information</label>
+                        <input type="text" placeholder="Enter additional information"  id="jobOthers" name="jobOthers">
+                    </div>
+                    <div class="message_box"></div>
+                    <button onclick="submitPostJob(event)">Post Job</button>
+                </form>
+                <div class="searchbox" id="twzipcode" ></div>
+
+            </section>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="footer_text">COPYRIGHT &copy; Simp.Com</div>
+    </footer>
+
+</body>
+
+<!-- adding library jquery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-twzipcode@1.7.14/jquery.twzipcode.min.js"></script>
+<script src="{{ url_for('static', filename= 'javaScript/sidebar.js')}}"></script>
+<script src="{{ url_for('static', filename= 'javaScript/application.js')}}"></script>
+</html>

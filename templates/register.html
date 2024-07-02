@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simp |Find or become the best simp</title>
+    <!-- adding font from google font -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/register.css') }}">
+</head>
+<body>
+    <main style="width: 100%; display: flex;">
+    <!-- sidebar -->
+        <div class="sidebar">
+            <h1 id="returnIndex" class="logo">Simp.com</h1>
+        </div>
+        <div class="main">
+            <section class="container_signup">
+                <header>Sign Up</header>
+                <div class="container_subtitle">Sign up for Simp.com</div>
+                <form action="#" class="form" id="signupForm">
+                    <div class="input_box">
+                        <ion-icon class="icon" name="id-card-outline"></ion-icon>
+                        <input type="text" placeholder="Username" id="signupName" name="signupName">
+                    </div>
+                    <div class="input_box">
+                        <ion-icon class="icon" name="mail-outline"></ion-icon>
+                        <!-- type 設定為email                         -->
+                        <input type="email" placeholder="User Email" id="signupEmail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}" name="signupEmail">
+                    </div>
+                    <div class="column">
+                        <div class="input_box">
+                            <ion-icon class="icon" name="key-outline"></ion-icon>
+                            <input type="password" placeholder="Passwrod must be 6-12 characters." minlength="6" maxlength="12" id="signupPwd" name="signupPwd">
+                        </div>
+                        <div class="input_box">
+                            <ion-icon class="icon" name="key-outline"></ion-icon>
+                            <input type="password" placeholder="Re-enter password" id="signupRePwd">
+                        </div>
+                    </div>
+                    <div class="signup_message_box"></div>
+                    <button onclick="submitSignupForm(event)">Sign Up</button>
+                    <div class="switch_to_singin">Already a member? Log <Inp></Inp></div>
+                </form>
+            </section>
+            <section class="container_signin">
+                <header>Log In</header>
+                <div class="container_subtitle">Welcome to SIMP.COM</div>
+                <form action="#" class="form" id="signinForm">
+                    <div class="input_box">
+                        <ion-icon class="icon" name="mail-outline"></ion-icon>
+                        <input type="text" placeholder="User Email" id="signinEmail" name="signinEmail">
+                    </div>
+                    <div class="input_box">
+                        <ion-icon class="icon" name="key-outline"></ion-icon>
+                        <input type="password" placeholder="Password" id="signinPwd" name="signinPwd">
+                    </div>
+                    <div class="signin_message_box"></div>
+                    <button onclick= submitSigninForm(event)>Log In</button>
+                    <div class="signin-message-box">123</div>
+                    <div class="switch_to_signup">Need an account? Sign Up</div>
+                </form>
+            </section>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="footer_text">COPYRIGHT &copy; Simp.Com</div>
+    </footer>
+</body>
+<!-- adding icon from ionicons -->
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<!-- adding library jquery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="{{ url_for('static', filename= 'javaScript/register.js')}}"></script>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simp |Find or become the best simp</title>
+    <!-- adding font from google font -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/index.css') }}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-twzipcode@1.7.14/jquery.twzipcode.min.js"></script>
+
+</head>
+<body>
+    <main style="width: 100%; display: flex">
+    <!-- sidebar -->
+    <div class="sidebar">
+        <h1 id="returnIndex" class="logo">Simp.com</h1>
+        <div class="menus">
+            <a href="#" class="menu_signin" id="registerPage"><ion-icon name="home-outline"></ion-icon>Sign in/ Sign up</a>
+            <a href="#" class="menu_fanpage"><ion-icon name="people-outline"></ion-icon>Member Page</a>
+            <a href="#" class="menu_post"><ion-icon name="newspaper-outline"></ion-icon>Post Job</a>
+            <a href="#" class="menu_message"><ion-icon name="mail-unread-outline"></ion-icon>My Message</a>
+            <a href="#" class="menu_schedule"><ion-icon name="alarm-outline"></ion-icon>My Schedule</a>
+            <a href="#" class="menu_mypost"><ion-icon name="bookmarks-outline"></ion-icon>My Posted Jobs</a>
+            <a href="#" class="menu_favorite"><ion-icon name="settings-outline"></ion-icon>My Saved Jobs</a>
+            <a href="#" class="menu_logout"><ion-icon name="log-out-outline"></ion-icon>Logout</a>
+        </div>
+    </div>
+    <!-- main -->
+    <div class="main">
+        <div class="main-header">
+            <ion-icon class="menu-bar" name="menu-outline"></ion-icon>
+            <div class="search">
+                <input class="searchbox" name="keyword" id="jobSearchInput" type="text" placeholder="Job title, or keywords．．．">
+                <!-- <input name="postalCode" id="postalCodeInput" type="text" placeholder="根據郵遞區號進行搜尋．．．"> -->
+                <div class="searchbox" id="twzipcode" ></div>
+
+                <button class="btn-search" onclick="performSearch()" id="searchBtn"><ion-icon name="search-outline"></ion-icon></button>
+            </div>
+        </div>
+        <div class="wrapper" id="job_list">
+            <!-- <div class="card">
+                <div class="card-left blue-bg">
+                    <img src="static/images/wehelp_log.png">
+                </div>
+                <div class="card-center">
+                    <h3 id="job_title">搬家人員</h3>
+                    <p id="job_description" class="card-detail">徵求臨時搬家人員</p>
+                    <p class="card-loc" id="job_location"><ion-icon name="location-outline"></ion-icon>241 三重區</p>
+                    <div class="card-sub">
+                        <p><ion-icon name=today-outline></ion-icon>11/06/2023</p>
+                        <p><ion-icon name=people-outline></ion-icon>3 人</p>
+                    </div>
+                </div>
+                <div class="card-right">
+                    <div class="card-tag">
+                        <h5>工作或交件時間</h5>
+                        <p id="job_date"><ion-icon name=today-outline></ion-icon>11/11/2023</p>
+                        <p><ion-icon name="briefcase-outline"></ion-icon>08:00 - 12:00</p>
+                    </div>
+                    <div class="card-salary">
+                        <p><b>報酬</b><span class="card-salary-font">1200 元</span></p>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </div>
+    <div class="detail">
+        <ion-icon class="close-detail" name="close-outline"></ion-icon>
+        <div class="detail-header">
+            <h2 id="qTitle"></h2>
+        </div>
+        <hr class="divider">
+        <div class="detail-desc">
+            <div class="about">
+                <h4>About the Employer</h4>
+                <p id="employeeName"></p>
+                <div style="color: #5f5f5f; cursor: pointer; padding-top: 10px;" onclick="createMessage()">
+                    <ion-icon name="chatbubbles-outline"></ion-icon>  Send a message !
+                </div>  
+            </div>
+            <hr class="divider">
+            <div class="qualification">
+                <h4>Job Details</h4>
+                <div id="qid" style="display: none;" ></div>
+                <div class="qSubTitle">Job Description</div>
+                <div class="qcontent" id="qContent"></div>
+                <div class="qSubTitle">Job Location</div>
+                <div class="qcontent" id="qLocation"></div>
+                <div class="qSubTitle">Payment Method</div>
+                <div class="qcontent" id="qPayMethod"></div>
+                <div class="qSubTitle">Pay Date</div>
+                <div class="qcontent" id="qPayDate"></div>
+                <div class="qSubTitle">Job Dates</div>
+                <div class="qcontent" id="qWorkingDate"></div>
+                <div class="qSubTitle">Working Hours</div>
+                <div class="qcontent" id="qWorkingHour"></div>
+                <div class="qSubTitle">Number of Positions</div>
+                <div class="qcontent" id="qNumPosition"></div>
+                <div class="qSubTitle">Additional Information</div>
+                <div class="qcontent" id="qOthers"></div>
+            </div>   
+        </div>
+        <hr class="divider">
+        <div class="message_box"></div>
+        <div class="detail-btn">
+            <button class="btn-apply" id="applyBtn">Apply</button>
+            <button class="btn-save" id="saveBtn">Save</button>
+        </div>
+    </div>
+    </main>
+    <footer class="footer">
+        <div class="footer_text">COPYRIGHT &copy; Simp.Com</div>
+    </footer>
+</body>
+<!-- adding icon from ionicons -->
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<script src="{{ url_for('static', filename= 'javaScript/index.js')}}"></script>
+<script src="{{ url_for('static', filename= 'javaScript/sidebar.js')}}"></script>
+<script src="{{ url_for('static', filename= 'javaScript/createMessage.js')}}"></script>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simp |Find or become the best simp</title>
+    <!-- import the Socket.IO client library  -->
+    <script src="https://cdn.socket.io/4.6.0/socket.io.min.js" integrity="sha384-c79GN5VsunZvi+Q/WObgk2in0CbZsHnjEqvFxC5DxHn9lTfNce2WW6h2pH6u/kF+" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/message.css') }}">
+
+</head>
+<body>
+    <body>
+        <main style="width: 100%; display: flex">
+        <!-- sidebar -->
+        <div class="sidebar">
+            <h1 id="returnIndex" class="logo">Simp.com</h1>
+            <div class="menus">
+                <a href="#" class="menu_fanpage"><ion-icon name="people-outline"></ion-icon>Member Page</a>
+                <a href="#" class="menu_post"><ion-icon name="newspaper-outline"></ion-icon>Post Job</a>
+                <a href="#" class="menu_message"><ion-icon name="mail-unread-outline"></ion-icon>My Message</a>
+                <a href="#" class="menu_schedule"><ion-icon name="alarm-outline"></ion-icon>My Schedule</a>
+                <a href="#" class="menu_mypost"><ion-icon name="bookmarks-outline"></ion-icon>My Posted Jobs</a>
+                <a href="#" class="menu_favorite"><ion-icon name="settings-outline"></ion-icon>My Saved Jobs</a>
+                <a href="#" class="menu_logout"><ion-icon name="log-out-outline"></ion-icon>Logout</a>
+            </div>
+        </div>
+        <div class="main">
+            <div class="wrapper" id="messageList">
+                <!-- <div class="card" id="message_user"> -->
+                    <!-- <div class="card-left blue-bg">
+                        <img src="static/images/wehelp_log.png">
+                    </div>
+                    <div class="card-center">
+                        <h3 id="job_title">搬家人員</h3>
+                        <p id="job_description" class="card-detail">徵求臨時搬家人員</p>
+                        <p><ion-icon name=today-outline></ion-icon>11/06/2023</p>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+        <div class="detail" >
+            <div id="chatBox" class="chatBox">
+                <div class="chatBoxBackground" id="chat-messages">
+                    <div id="messageContent" style="padding-top: 15px; padding-left: 15px;"></div>
+                </div>
+                <div class="input_box">
+                    <input type="text" id="message" placeholder="Enter a Message">
+                </div>
+            </div>
+        </div>
+        </main>
+        <footer class="footer">
+            <div class="footer_text">COPYRIGHT &copy; Simp.Com</div>
+        </footer>
+</body>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<script src="{{ url_for('static', filename= 'javaScript/message.js')}}"></script>
+<script src="{{ url_for('static', filename= 'javaScript/sidebar.js')}}"></script>
+</html>

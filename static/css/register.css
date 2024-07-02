@@ -1,0 +1,312 @@
+:root {
+    --primaryColor:#4c50d3;
+    --secondaryColor:#ffce00;
+    --fontColor: #1e1e1e;
+    --whiteColor: #fff;
+    --greyColor: #e7e7e7;
+    --darkGreyCorlor: #5f5f5f;
+    --softPurple: #e7e8ff;
+    --softBlue: #c3e1ff;
+    --softYellow: #fff5cc;
+    --softRed: #ffcbc8;
+    --blackColor: #000;
+    --redColor: #f00
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    font-family: "Lato", sans-serif;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+}
+
+.sidebar {
+    width: 20%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 2rem;
+    background-color: var(--primaryColor);
+    color: var(--whiteColor);
+    position: fixed;
+    left: 0;
+}
+
+.logo {
+    letter-spacing: 3px;
+    text-align: center;
+    cursor: pointer;
+    color: var(--whiteColor);
+    font-size: 2.5rem;
+}
+  
+.main {
+    width: 80%;
+    min-height: 100%;
+    min-width: 300px;
+    height: max-content;
+    display: flex;
+    margin-left: auto;
+    align-items:self-start;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.container_signup{
+    position: relative;
+    max-width: 1200px;
+    width: 80%;
+    max-height: 600px;
+    overflow: auto;
+    background-color: var(--whiteColor);
+    padding: 25px;
+    border-radius: 8px;
+    border: 1px solid var(--greyColor);
+    box-shadow: var(--blackColor);
+}
+
+.container_signin{
+    position: relative;
+    max-width: 1200px;
+    width: 80%;
+    max-height: 600px;
+    overflow: auto;
+    background-color: var(--whiteColor);
+    padding: 25px;
+    border-radius: 8px;
+    border: 1px solid var(--greyColor);
+    box-shadow: var(--blackColor);
+}
+.container_signup header{
+    font-size: 3rem;
+    color: var(--fontColor);
+    font-weight: 500;
+    text-align: center;
+}
+
+.container_signin header{
+    font-size: 3rem;
+    color: var(--fontColor);
+    font-weight: 500;
+    text-align: center;
+}
+
+.container_subtitle {
+    text-align: center; 
+    margin-top: 10px; 
+    color: var(--darkGreyCorlor);
+}
+.container .form {
+    margin-top: 30px;
+}
+
+.form .input_box {
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    position: relative;
+    align-items: center;
+}
+
+.form .input {
+    padding-left: 20px;
+    flex: 1;
+}
+
+.eye_off {
+    position: absolute;
+    top: 50%;
+    right: 8px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+}
+.eye_on {
+    position: absolute;
+    top: 50%;
+    right: 8px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    display: none;
+}
+
+.icon {
+    position: absolute;
+    top: 50%;
+    left: 8px;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    z-index: 3;
+}
+
+
+/* .input_box .label {
+    color: var(--fontColor);
+}*/
+
+.form :where(.input_box input, .select_box){
+    position: relative;
+    height: 50px;
+    width: 100%;
+    outline: none;
+    border: 1px solid var(--greyColor);
+    border-radius: 6px;
+    color: var(--fontColor);
+    font-size: 1rem;
+    margin-top: 8px;
+    padding: 0 60px;
+}
+
+.form .column {
+    display: flex;
+    column-gap: 15px;
+}
+
+.form .gender_box {
+    margin-top: 20px;
+}
+
+.gender_box h3 {
+    color:var(--fontColor);
+    font-size: 1rem;
+    font-weight: 400;
+    margin-bottom: 8px;
+}
+.form :where(.gender_option, .gender) {
+    display: flex;
+    align-items: center;
+    column-gap: 50px;
+    flex-wrap: wrap;
+}
+
+.form .gender {
+    column-gap: 5px;
+}
+
+.form :where(.gender input, .gender label) {
+    cursor: pointer;
+}
+
+.addres :where(input, .select_box) {
+    margin-top: 15px;
+}
+
+.select_box select{
+    height: 100%;
+    width: 100%;
+    outline: none;
+    border: none;
+    color: var(--fontColor);
+    font-size: 1rem;
+}
+
+.form button {
+    height: 55px;
+    width: 100%;
+    background-color: var(--primaryColor);
+    color: var(--whiteColor);
+    font-size: 1rem;
+    border: none;
+    margin-top: 30px;
+    cursor: pointer;
+    border-radius: 20px;
+    font-weight: 400;
+    padding: 10px 20px;
+}
+
+.form button:hover {
+    border: 1px solid var(--primaryColor);
+    background-color: transparent;
+    color: var(--primaryColor);
+}
+
+.switch_to_singin {
+    color: var(--fontColor);
+    text-align: end;
+    margin: 20px 0;
+    cursor: pointer;
+}
+.switch_to_signup {
+    color: var(--fontColor);
+    text-align: end;
+    margin: 20px 0;
+    cursor: pointer;
+}
+
+.signin-message-box {
+    border-radius: 6px;
+    font-size: 12px;
+    color:red;
+    background-color: lightpink;
+    width:90%;
+    margin: 0px 15px 10px 15px;
+    padding: 10px 15px;
+    text-align: center;
+    display: none;
+}
+
+.signup-message-box {
+    border-radius: 6px;
+    font-size: 12px;
+    color:red;
+    background-color: lightpink;
+    width:90%;
+    margin: 0px 15px 10px 15px;
+    padding: 10px 15px;
+    text-align: center;
+    display: none;
+}
+
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50px;
+    background-color: var(--whiteColor);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+
+}
+.footer_text{
+    text-align: center; 
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 13.3px;
+    color:var(--fontColor);
+}
+
+.signup_message_box {
+    text-align: center; 
+    font-size: 1rem; 
+    margin: 10px 15px 0px 15px;
+    padding: 10px 15px;
+    color: var(--redColor);
+    display: none; 
+}
+
+.signin_message_box {
+    text-align: center; 
+    font-size: 1rem; 
+    margin: 10px 15px 0px 15px;
+    padding: 10px 15px;
+    color: var(--redColor);
+    display: none; 
+}
+

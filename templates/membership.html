@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simp |Find or become the best simp</title>
+    <!-- adding font from google font -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/membership.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/comments.css') }}">
+</head>
+<body>
+    <main style="width: 100%; display: flex;">
+    <!-- sidebar -->
+        <div class="sidebar">
+            <h1 id="returnIndex" class="logo">Simp.com</h1>
+            <div class="menus">
+                <a href="#" class="menu_fanpage"><ion-icon name="people-outline"></ion-icon>Member Page</a>
+                <a href="#" class="menu_post"><ion-icon name="newspaper-outline"></ion-icon>Post Job</a>
+                <a href="#" class="menu_message"><ion-icon name="mail-unread-outline"></ion-icon>My Message</a>
+                <a href="#" class="menu_schedule"><ion-icon name="alarm-outline"></ion-icon>My Schedule</a>
+                <a href="#" class="menu_mypost"><ion-icon name="bookmarks-outline"></ion-icon>My Posted Jobs</a>
+                <a href="#" class="menu_favorite"><ion-icon name="settings-outline"></ion-icon>My Saved Jobs</a>
+                <a href="#" class="menu_logout"><ion-icon name="log-out-outline"></ion-icon>Logout</a>
+            </div>
+        </div>
+        <div class="main">
+            <section class="container">
+                <header>Member Page</header>
+                <form class="form" id="membershipForm" >
+                    <div class="btnMemberPhoto">
+                        <img id="memberIcon" class="membershipPhoto" >
+                        <input type="file" id="memberPhotoFile" name="memberPhotoFile" style="margin-top: 10px;">
+                        <label class="btnChangeMemberInformation" id="updateMemberPhoto" >Change Icon</label>
+                    </div>
+                    <div class="input_box">
+                        <div class="column">
+                            <div class="input_box">
+                                <div class="input_box" style="text-align: center; font-size: 1.5rem;" >Username:  <span style="padding-left: 20px" id="userId"></span></div>
+                            </div>
+                            <div class="input_box">
+                                <input type="text" placeholder="New Username" id="newId" name="newId">
+                            </div>
+                            <button type="button" class="btnChangeMember" id="updateMemberId">Save</button>
+                        </div>
+                    </div>
+                    <div class="input_box">
+                        <div class="column">
+                            <div class="input_box">
+                                <input type="password" placeholder="Current password" id="previousPwd" name="previousPwd">
+                            </div>
+                            <div class="input_box">
+                                <input type="password" placeholder="New passwrod" id="newPwd" name="newPwd">
+                            </div>
+                            <button class="btnChangeMember" id="updatePwd">Save</button>
+                        </div>
+                    </div>
+                    <div style="margin-top: 10px; margin-bottom: 20px;" class="messageBox"></div>
+
+                </form>
+            </section>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="footer_text">COPYRIGHT &copy; Simp.Com</div>
+    </footer>
+</body>
+<!-- adding icon from ionicons -->
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<!-- adding library jquery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="{{ url_for('static', filename= 'javaScript/sidebar.js')}}"></script>
+<script src="{{ url_for('static', filename= 'javaScript/membership.js')}}"></script>
+</html>

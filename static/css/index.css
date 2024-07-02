@@ -1,0 +1,459 @@
+:root {
+    --primaryColor:#4c50d3;
+    --secondaryColor:#ffce00;
+    --fontColor: #1e1e1e;
+    --whiteColor: #fff;
+    --greyColor: #e7e7e7;
+    --darkGreyCorlor: #5f5f5f;
+    --softPurple: #e7e8ff;
+    --softBlue: #c3e1ff;
+    --softYellow: #fff5cc;
+    --softRed: #ffcbc8;
+    --blackColor: #000;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    font-family: "Lato", sans-serif;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+}
+
+.sidebar {
+    width: 20%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2rem;
+    background-color: var(--primaryColor);
+    color: var(--whiteColor);
+    position: fixed;
+    left: 0;
+}
+
+.logo {
+    letter-spacing: 3px;
+    text-align: center;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.menus {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    font-weight: 400;
+}
+
+.menus a{
+    display: flex;
+    align-items: center;
+    color: var(--whiteColor);
+    text-decoration: none;
+}
+
+.menus ion-icon {
+    margin-right: 0.5rem;
+}
+
+.menus a:hover {
+    color: var(--secondaryColor);
+}
+
+.profile {
+    width: auto;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    background-color: none;
+    color: var(--whiteColor);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-left: auto; 
+}
+
+.profile-img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+}
+
+.profile-name {
+    font-size: 14px;
+}
+
+.profile-button {
+    width: 70px;
+    height: 70px;
+    background-color: var(--primaryColor);
+    color: var(--whiteColor);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.main {
+    width: calc(100% - 20% - 25%);
+    min-height: 100%;
+    min-width: 300px;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 2%;
+    margin-left: 20%;
+    background-color: var(--whiteColor);
+    z-index: 1;
+}
+
+.main-header{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* hide menu-bar */
+.menu-bar {
+    background-color: var(--whiteColor);
+    padding: 0.5rem;
+    border-radius: 20px;
+    display: none;
+}
+
+.search {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    border: none;
+    background-color: var(--whiteColor);
+    border-radius: 20px;
+    padding: 0.5rem 1rem;
+    position: relative;
+}
+
+.searchbox {
+    width: 90%;
+    border: 1px solid var(--blackColor);
+    background-color: var(--whiteColor);
+    border-radius: 20px;
+    padding: 0.5rem 1rem;
+    position: relative;
+    margin-left: 5px;
+}
+
+.searchbox input ,
+.searchbox select{
+  margin:15px 0;
+  justify-content: center;
+
+  outline:none;
+  border:none;
+  border-radius:5px;
+  display:inline-block;
+  -webkit-box-sizing:border-box;
+     -moz-box-sizing:border-box;
+          box-sizing:border-box;
+    -webkit-transition:0.2s ease all;
+     -moz-transition:0.2s ease all;
+      -ms-transition:0.2s ease all;
+       -o-transition:0.2s ease all;
+          transition:0.2s ease all;
+}
+
+.btn-search {
+    padding: 0 5%;
+    background-color: var(--whiteColor);
+    font-size: 18px;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    cursor: pointer;
+    border: 1px solid var(--blackColor);
+    margin-left: 5px;
+}
+
+.btn-search:hover {
+    background-color: var(--greyColor);
+}
+
+.sort{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.sort p{
+    font-size: 14px;
+}
+
+.sort-list select {
+    height: 1.5rem;
+    border-radius: 20px;
+    border: 1px solid var(--blackColor);
+    margin-top: 0 0.5rem;
+}
+
+.wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 0;
+    gap: 1rem;
+    overflow-y: auto;
+}
+
+.card {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 3%;
+    margin: 0 1%;
+    background-color: var(--whiteColor);
+    line-height: 1.5;
+    gap: 1.5rem;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    border: 10px;
+    cursor: pointer;
+    border-radius: 10px;
+    letter-spacing: 2px;
+   
+}
+
+.card:hover{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.card-left {
+    width: 10%;
+    min-height: 50px;
+    display: flex;
+    justify-content: center;
+    border-radius: 20%;
+}
+
+.card-left img{
+    width: 100%;
+    height: auto;
+    min-width: 60px;
+    padding: 1rem;
+}
+
+.card-center {
+    width: 50%;
+}
+
+.card-loc, .card-sub {
+    font-size: 13px;
+    color: var(--darkGreyCorlor);
+}
+
+.card-sub {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card-sub p {
+    display: flex;
+    padding: 0 0.5rem 0 0;
+    align-items: center;
+}
+
+.card-right {
+    width: 25%;
+}
+
+.card-tag p {
+    color: var(--fontColor);
+    font-size: 13px;
+    padding-left: 3px;
+}
+
+.card-salry {
+    padding: 0.5rem 0;
+    color: var(--fontColor);
+}
+
+.card-salry-font {
+    color: var(--primaryColor);
+    font-size: 13px;
+}
+
+.card-sub ion-icon, .card-tag ion-icon {
+    margin-right: 0.5rem;
+}
+
+.detail {
+    width: 25%;
+    min-width: 250px;
+    height: 100%;
+    padding: 2rem;
+    position: fixed;
+    right: 0;
+    background-color: var(--whiteColor);
+    overflow: auto;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px, 7px, 29px, 0px;
+}
+
+.close-detail {
+    display: none;
+}
+
+.detail-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.divider {
+    width: 100%;
+    height: 1px;
+    background-color: var(--greyColor);
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+.qSubTitle {
+    font-size: 15px;
+    color: var(--blackColor);
+    margin: 5px 0;
+}
+.qcontent {
+    font-size: 13px;
+    color: var(--darkGreyCorlor);
+}
+
+.detail-desc {
+    line-height: 1.5;
+}
+
+.about a{
+    margin: 0.5rem 0 0 0;
+    color: var(--primaryColor);
+    font-size: 14px;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.detail-btn {
+    display: flex;
+    gap: 1rem;
+    margin: 1rem 0;
+    align-items: center;
+    justify-content: center; 
+}
+
+.btn-apply {
+    background-color: var(--primaryColor);
+    color: var(--whiteColor);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.btn-save {
+    background-color: var(--primaryColor);
+    color: var(--whiteColor);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.btn-apply:hover {
+    border: 1px solid var(--primaryColor);
+    background-color: transparent;
+    color: var(--primaryColor);
+}
+
+.btn-save:hover {
+    border: 1px solid var(--primaryColor);
+    background-color: transparent;
+    color: var(--primaryColor);
+}
+
+/* Showing menu when click menubar */
+.sidebar.active {
+    display: flex;
+    width: 220px;
+    z-index: 100;
+}
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50px;
+    background-color: var(--whiteColor);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+
+}
+.footer_text{
+    text-align: center; 
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 13.3px;
+    color:var(--fontColor);
+}
+.message_box {
+    text-align: center; 
+    font-size: 1rem; 
+    margin: 10px 15px 0px 15px;
+    padding: 10px 15px;
+    color: var(--redColor);
+    display: none; 
+}
+@media (max-width: 1200px) {
+    .menu-bar {
+        display: block;
+        cursor: pointer;
+    }
+    .sidebar {
+        display: none;
+    }
+    .main {
+        width: calc(100% - 40%);
+        margin-left: 0;
+    }
+    .detail {
+        width: 40%;
+    }
+}
+
+@media (max-width: 600px) and (min-width: 360px) {
+    .main {
+        width: 100%;
+    }
+    .detail {
+        width: none;
+    }
+    .detail.active{
+        display: block;
+        width: 100%;
+        z-index: 100;
+    }
+    .detail.active .close-detail {
+        display: block;
+        cursor: pointer;
+    }
+    .menus {
+        gap: 2rem;
+    }
+}

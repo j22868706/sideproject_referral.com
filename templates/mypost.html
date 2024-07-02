@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simp |Find or become the best simp</title>
+    <!-- adding font from google font -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/favorite.css') }}">
+</head>
+<body>
+    <main style="width: 100%; display: flex">
+    <!-- sidebar -->
+    <div class="sidebar">
+        <h1 id="returnIndex" class="logo">Simp.com</h1>
+        <div class="menus">
+            <a href="#" class="menu_fanpage"><ion-icon name="people-outline"></ion-icon>Member Page</a>
+            <a href="#" class="menu_post"><ion-icon name="newspaper-outline"></ion-icon>Post Job</a>
+            <a href="#" class="menu_message"><ion-icon name="mail-unread-outline"></ion-icon>My Message</a>
+            <a href="#" class="menu_schedule"><ion-icon name="alarm-outline"></ion-icon>My Schedule</a>
+            <a href="#" class="menu_mypost"><ion-icon name="bookmarks-outline"></ion-icon>My Posted Jobs</a>
+            <a href="#" class="menu_favorite"><ion-icon name="settings-outline"></ion-icon>My Saved Jobs</a>
+            <a href="#" class="menu_logout"><ion-icon name="log-out-outline"></ion-icon>Logout</a>
+        </div>
+    </div>
+    <!-- main -->
+    <div class="main">
+        <div class="wrapper" id="fav_list">
+            <!-- <div class="card">
+                <div class="card-left blue-bg">
+                    <img src="images/wehelp_log.png">
+                </div>
+                <div class="card-center">
+                    <h3>搬家人員</h3>
+                    <p class="card-detail">徵求臨時搬家人員</p>
+                    <p class="card-loc"><ion-icon name="location-outline"></ion-icon>241 三重區</p>
+                    <div class="card-sub">
+                        <p><ion-icon name=today-outline> </ion-icon>11/06/2023</p>
+                    </div>
+                </div>
+                <div class="card-right">
+                    <div class="card-tag">
+                        <h5>工作時間</h5>
+                        <p><ion-icon name=today-outline></ion-icon>11/11/2023</p>
+                        <p><ion-icon name="briefcase-outline"></ion-icon>08:00 - 12:00</p>
+                    </div>
+                </div> -->
+            <!-- </div> -->
+        </div>
+    </div>
+    <div class="detail" id="detail">
+        <!-- <div class="card">
+                <div class="card-left blue-bg">
+                    <img id="applicantIcon">
+                </div>
+                <div class="card-center">
+                    <h3 id="applicantName"></h3>
+                    <div class="card-tag">
+                    <p><ion-icon name=today-outline></ion-icon>11/11/2023</p>
+                    <p><ion-icon name="briefcase-outline"></ion-icon>08:00 - 12:00</p>  
+                    </div>              
+                </div>
+                <div class="card-right">
+                    <button class="btn-apply" style="margin-bottom: 10px;" id="applyBtn">應徵職缺</button>
+                    <button class="btn-cancel" id="cancelBtn">取消收藏</button>
+                </div>
+            </div>
+        </div> -->
+        <!-- <ion-icon class="close-detail" name="close-outline"></ion-icon>
+        <div class="detail-header">
+            <h2 id="qTitle"></h2>
+        </div>
+        <hr class="divider">
+        <div class="detail-desc">
+            <div class="about">
+                <h4>關於雇主</h4>
+                <p></p>
+                <a href="#">Read more</a>
+            </div>
+            <hr class="divider">
+            <div class="qualification">
+                <h4>工作詳細資訊</h4>
+                <div id="qid" style="display: none;" ></div>
+                <div class="qSubTitle">工作內容</div>
+                <div class="qcontent" id="qContent"></div>
+                <div class="qSubTitle">工作地點</div>
+                <div class="qcontent" id="qLocation"></div>
+                <div class="qSubTitle">支薪方式</div>
+                <div class="qcontent" id="qPayMethod"></div>
+                <div class="qSubTitle">支薪日</div>
+                <div class="qcontent" id="qPayDate"></div>
+                <div class="qSubTitle">工作日期</div>
+                <div class="qcontent" id="qWorkingDate"></div>
+                <div class="qSubTitle">工作時間</div>
+                <div class="qcontent" id="qWorkingHour"></div>
+                <div class="qSubTitle">需求人數</div>
+                <div class="qcontent" id="qNumPosition"></div>
+                <div class="qSubTitle">其他備註</div>
+                <div class="qcontent" id="qOthers"></div>
+            </div>   
+        </div> -->
+    </div>
+    </main>
+    <footer class="footer">
+        <div class="footer_text">COPYRIGHT &copy; Simp.Com</div>
+    </footer>
+</body>
+<!-- adding icon from ionicons -->
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<!-- adding library jquery -->
+<script src="{{ url_for('static', filename= 'javaScript/mypost.js')}}"></script>
+<script src="{{ url_for('static', filename= 'javaScript/sidebar.js')}}"></script>
+</html>
